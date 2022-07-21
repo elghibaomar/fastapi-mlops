@@ -8,3 +8,4 @@ sklearn
 torch
 transformers
 pydantic
+gdown
