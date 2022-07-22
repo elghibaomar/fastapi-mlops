@@ -9,6 +9,9 @@ COPY ./requirements.txt /code/requirements.txt
 
 COPY ./config.json /code/config.json
 
+RUN docker pull rust
+
+RUN docker run rust
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
@@ -16,7 +19,6 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./app /code/app
 
 # 
-
 RUN python app/bin/download_model
 
 
