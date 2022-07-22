@@ -12,6 +12,10 @@ COPY ./config.json /code/config.json
 
 
 # 
+
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+
+
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # 
