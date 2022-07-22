@@ -18,7 +18,9 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./app /code/app
 
 # 
-RUN python app/bin/download_model
 
+RUN pip install transformers==2.8.0
+
+RUN python app/bin/download_model
 
 CMD ["uvicorn", "app.sentiment_analyzer.api:app", "--host", "0.0.0.0", "--port", "80"]
