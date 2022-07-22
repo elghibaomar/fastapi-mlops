@@ -19,8 +19,9 @@ COPY ./app /code/app
 
 # 
 
-RUN pip install transformers==2.8.0
-
 RUN python app/bin/download_model
 
+RUN pip install transformers==2.8.0
+
 CMD ["uvicorn", "app.sentiment_analyzer.api:app", "--host", "0.0.0.0", "--port", "80"]
+
