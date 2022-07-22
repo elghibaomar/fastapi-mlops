@@ -17,7 +17,7 @@ COPY ./config.json /code/config.json
 # RUN apt-get update
 
 # Get Rust; NOTE: using sh for better compatibility with other base images
-RUN apt -y install rustc
+RUN pip install rustc
 
 
 
