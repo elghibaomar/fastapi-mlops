@@ -11,16 +11,14 @@ COPY ./config.json /code/config.json
 
 
 
-# 
 
-# Get Ubuntu packages
-RUN curl
 
 # NOTE: no need to run update again at this point
 # RUN apt-get update
 
 # Get Rust; NOTE: using sh for better compatibility with other base images
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
