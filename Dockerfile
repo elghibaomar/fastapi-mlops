@@ -10,17 +10,6 @@ COPY ./requirements.txt /code/requirements.txt
 COPY ./config.json /code/config.json
 
 
-
-
-
-# NOTE: no need to run update again at this point
-# RUN apt-get update
-
-# Get Rust; NOTE: using sh for better compatibility with other base images
-RUN pip install rustc
-
-
-
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # 
