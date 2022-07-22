@@ -17,7 +17,7 @@ COPY ./config.json /code/config.json
 # RUN apt-get update
 
 # Get Rust; NOTE: using sh for better compatibility with other base images
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+RUN apt -y install rustc
 
 
 
